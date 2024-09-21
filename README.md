@@ -1,12 +1,16 @@
 # JSON to CSV CLI Tool
 
-A simple command-line interface (CLI) tool to convert JSON files to CSV format. This tool is particularly useful for data analysts, developers, and anyone working with data transformation tasks.
+A simple and efficient command-line interface (CLI) tool to convert JSON files to CSV format. This tool is particularly useful for data analysts, developers, and anyone working with data transformation tasks.
 
 ## Features
 
 - Convert JSON files to CSV format
 - Handle nested JSON structures
 - Customize CSV delimiter
+- Specify file encoding
+- Option to include headers in CSV output
+- Progress bar for large file conversions
+- Detailed error handling
 - Easy to use command-line interface
 
 ## Installation
@@ -29,7 +33,9 @@ json-to-csv <input_json_file> <output_csv_file> [options]
 
 - `-d, --delimiter <char>`: Specify the CSV delimiter (default: ',')
 - `-k, --key <string>`: JSON key to extract (for nested structures)
-- `-h, --help`: Display help information
+- `-e, --encoding <encoding>`: Specify file encoding (default: utf8)
+- `-h, --headers`: Include headers in CSV output
+- `--help`: Display help information
 - `-V, --version`: Display version information
 
 ### Examples
@@ -52,9 +58,15 @@ json-to-csv <input_json_file> <output_csv_file> [options]
    json-to-csv input.json output.csv -k "users"
    ```
 
-4. Combining options:
+4. Specifying encoding and including headers:
+
    ```bash
-   json-to-csv input.json output.csv -d ";" -k "data.users"
+   json-to-csv input.json output.csv -e "ascii" -h
+   ```
+
+5. Combining options:
+   ```bash
+   json-to-csv input.json output.csv -d ";" -k "data.users" -e "utf16le" -h
    ```
 
 ## Development
@@ -76,7 +88,7 @@ To set up the project for development:
 
 3. Make your changes and test them:
    ```bash
-   node index.js test-data.json output.csv -k users
+   node index.js test-data.json output.csv -k users -h
    ```
 
 ## Contributing
@@ -97,6 +109,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Commander.js](https://github.com/tj/commander.js/) for CLI argument parsing
 - [PapaParse](https://www.papaparse.com/) for CSV parsing and generation
+- [cli-progress](https://github.com/npkgz/cli-progress) for progress bar functionality
 
 ## Contact
 

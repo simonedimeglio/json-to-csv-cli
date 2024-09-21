@@ -1,10 +1,10 @@
 {
   "name": "json-to-csv-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CLI tool to convert JSON files to CSV",
   "main": "index.js",
   "bin": {
-    "json-to-csv": "./index.js"
+    "json-to-csv": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^12.1.0",
-    "papaparse": "^5.4.1"
+    "papaparse": "^5.4.1",
+    "cli-progress": "^3.12.0"
   }
 }
